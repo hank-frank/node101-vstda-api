@@ -4,10 +4,10 @@ const fs = require('fs');
 const bodyParser = require('body-parser'); //including a bodyparser. did not end up being necesary at this stage but why take it our if we're coming back to this. 
 
 
-const output = fs.createWriteStream('./stdout.log');
-const errorOutput = fs.createWriteStream('./stderr.log');
-const { Console } = require('console');
-const logger = new Console({ stdout: output, stderr: errorOutput });  //This is console logger to the stdout.log file. takes format logger.log()
+// const output = fs.createWriteStream('./stdout.log');
+// const errorOutput = fs.createWriteStream('./stderr.log');
+// const { Console } = require('console');
+// const logger = new Console({ stdout: output, stderr: errorOutput });  //This is console logger to the stdout.log file. takes format logger.log()
 
 const app = express();
 // add your code here
@@ -59,7 +59,7 @@ app.get('/api/TodoItems/:number', (req, res) => {
              };
         // };
     }; 
-    logger.log(index);
+    // logger.log(index);
     res.status(200).send(initialData[index]); //sending the response with the content being the obj from the array above, index of the number pushed out of the for loop above. 
 });
 
